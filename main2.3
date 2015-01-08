@@ -5,7 +5,9 @@ import java.util.ArrayList;
   
 public class Teste {  
   
-
+//o sistema pode ter: controle de login e senha por usuário
+//o sistema pode ter: exceptions.
+//o sistema pode ter:  QUANTIDADE DE ANIMAIS CADASTRADOS POR USUÁRIO
   
     public static void main(String[] args) {  
     
@@ -24,7 +26,7 @@ Scanner entrada = new Scanner(System.in);
         ArrayList<Registro> cadastro = new ArrayList<Registro>(); 
         
         //ArrayList para interagir com os dados do animal
-        ArrayList<Animais> ArrayAnimal = new ArrayList<Animais>();
+        ArrayList<Animais> cadastroanimal = new ArrayList<Animais>();
         
        //Laço de repetição que representa a exibição do menu até que encontre o System.exit(0) na opção 6
         
@@ -107,7 +109,7 @@ Scanner entrada = new Scanner(System.in);
                     System.out.println("\nNenhum Animal cadastrado\n");  
                 } else {  
   
-                    for (int m = 0; m < cadastro.size(); m++) {  
+                    for (int m = 0; m < cadastroanimal.size(); m++) {  
                         System.out.println("\nID Animal: "+ cadastroanimal.get(m).getId());  
                         System.out.println("Nome: " + cadastroanimal.get(m).getNome());
                         System.out.println("Idade (meses) : " + cadastroanimal.get(m).getIdade());
@@ -132,7 +134,7 @@ Scanner entrada = new Scanner(System.in);
                       System.out.print("Digite o animal que você deseja visualizar histórico: ");  
                       
                       
-                      boolean nomePesquisado = ArrayAnimal.contains(10); 
+                      boolean nomePesquisado = cadastroanimal.contains(10); 
 	  
                         if (nomePesquisado == true) {
                         
