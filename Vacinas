@@ -1,0 +1,30 @@
+
+public class Vacinas {
+int id;
+int nome;
+//incrementar forma pra saber se a vacina foi aplicada (historico vacinal).
+//a idade dos animais é contada em meses.
+//idéia: se necessário criar variável "tempo" pra contar a diferença de idade pras vacinas ou guardar com quantos meses vai tomar o reforço.
+enum VacinasPredefinidasGatos{
+multipla1dose /*2 meses ou menos*/,multipla2dose/*3 meses*/,multipla3dose/*entre 3 e 4 meses com reforco anual (4meses) */,raiva/*4 meses com reforco anual = 12 meses*/
+}
+
+enum VacinasPredefinidasCachorros{
+v8ouv10, /*2 meses*/gripecanina /*3 meses*/,giardíase /*3 meses*/,raiva /*4 meses*/ /*refocosparatodasvacinas anual = 12 meses*/
+}
+
+
+
+void AplicarVacina(){
+
+
+}
+
+void EditarVacina(){
+
+    
+}
+
+
+
+}
