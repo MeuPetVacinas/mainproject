@@ -8,7 +8,7 @@ public void AdicionarAnimal(){
 
 Scanner entry = new Scanner(System.in);
 
-
+//ADICIONAR HISTORICO VACINAL
 
 
 
@@ -33,4 +33,3 @@ super.setRaca(teste4);
 }
   
 }
-
