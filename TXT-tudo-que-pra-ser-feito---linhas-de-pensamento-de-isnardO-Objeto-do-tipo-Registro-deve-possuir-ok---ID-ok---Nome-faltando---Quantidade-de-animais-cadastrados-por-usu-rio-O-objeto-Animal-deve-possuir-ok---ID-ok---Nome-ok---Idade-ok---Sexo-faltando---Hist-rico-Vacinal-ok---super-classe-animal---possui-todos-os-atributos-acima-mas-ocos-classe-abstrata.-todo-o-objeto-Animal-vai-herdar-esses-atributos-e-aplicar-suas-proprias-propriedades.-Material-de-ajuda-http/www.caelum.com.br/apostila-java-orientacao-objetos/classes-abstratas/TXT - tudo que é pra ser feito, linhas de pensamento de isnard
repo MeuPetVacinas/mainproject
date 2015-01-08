@@ -1,0 +1,34 @@
+O Objeto do tipo Registro deve possuir:
+ok - ID
+ok - Nome
+faltando - Quantidade de animais cadastrados por usuário
+
+O objeto Animal deve possuir:
+ok - ID
+ok - Nome
+ok - Idade
+ok - Sexo
+faltando - Histórico Vacinal
+ok - (super classe animal - possui todos os atributos acima, mas "ocos", classe abstrata.)
+
+todo o objeto Animal vai herdar esses atributos e aplicar suas proprias propriedades.
+Material de ajuda: http://www.caelum.com.br/apostila-java-orientacao-objetos/classes-abstratas/#9-2-classe-abstrata
+
+
+Objeto do tipo Vacina deve possuir:
+ok - ID
+ok - Nome
+faltando - Interação com os objetos Animal (aplicar, editar vacina)
+
+Como ligar a aplicação de vacina e edição com a classe animal?
+Através do ID, o ID da vacina fazendo referencia com o ID do objeto Animal.
+ao "aplicar" uma vacina, mostraremos ela no histórico vacinal do objeto Animal, assim como quantas vezes foram aplicadas. (contador)
+
+IMPORTANTE: CONTAR A IDADE DO OBJETO ANIMAL SEMPRE EM MESES - VAI FACILITAR E MUITO A APLICAÇÃO DAS VACINAS (SÃO SEMPRE EM MESES)
+
+OBS1: o sistema pode ter: exceptions.
+OBS2: (se houver tempo) o sistema pode ter: controle de login e senha por usuário antes do menu. caso seja novo usuário realizar cadastro (igual ao case 1)
+
+idéia: se necessário criar variável "tempo" pra contar a diferença de idade pras vacinas ou guardar com quantos meses vai tomar o reforço.
+
+no main existem 2 arraylists, "cadastro" que fica cuidando do usuário, e "cadastroanimal" que cuida dos animais.
