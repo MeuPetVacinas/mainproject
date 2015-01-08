@@ -1,0 +1,36 @@
+package projetofinal;
+
+import java.util.Scanner; 
+
+public class Animais extends SuperClasseAnimal {
+
+public void AdicionarAnimal(){
+
+Scanner entry = new Scanner(System.in);
+
+
+
+
+
+System.out.println("Insira o nome para o seu animal: ");
+String teste = entry.nextLine();
+super.setNome(teste);
+
+System.out.println("Insira a idade para o seu animal (em meses) : ");
+int teste2 = entry.nextInt();
+super.setIdade(teste2);
+
+
+System.out.println("Qual o sexo do seu animal? 1- Macho, 2- Femea");
+     // SEXO FOI TROCADO DE BOOLEAN PRA INT PORQUE ESTAVA DANDO PROBLEMA DE MISMATCH EXCEPTION NO SCANNER
+int teste3 = entry.nextInt();
+super.setSexo(teste3);
+
+System.out.println("Seu animal é um gato ou cachorro? 1 - Gato, 2 - Cachorro");
+int teste4 = entry.nextInt();
+super.setRaca(teste4);
+
+}
+  
+}
+
