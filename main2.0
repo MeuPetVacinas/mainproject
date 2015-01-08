@@ -8,23 +8,30 @@ public class Teste {
 
   
     public static void main(String[] args) {  
-        // TODO code application logic here  
+    
 Scanner entrada = new Scanner(System.in);  
   
-        int i = 0;   
+        int i = 0; 
+        int k = 0;
         int escolha = 0;  
+        //variaveis utilizadas para representarem essas strings em determinadas partes do programa
+        String sexogambiarra  = "Macho";
+        String sexogambiarra2  = "Femea";
+        String racagambiarra  = "Cachorro";
+        String racagambiarra2  = "Gato";
   
         ArrayList<Registro> cadastro = new ArrayList<Registro>(); //mesmo motivo da variável i, para se utilizar sempre o mesmo ArrayList no resto código  
-        ArrayList<Animais> ArrayAnimal = new ArrayList<Animais>();
+        ArrayList<Animais> cadastroanimal = new ArrayList<Animais>();
         while (true) { //para o laço se repetir infinitamente (ou até que encontre o System.exit(0) na opção 4  
   
-        System.out.println("Bem vindo ao meu pet vacinas!! \n");  
- 	System.out.println("1 - Adicionar Novo Usuario");  
-        System.out.println("2 - Remover Usuario");  
-        System.out.println("3 - Mostra todos os Usuarios Cadastrados"); 
-        System.out.println("4 - Adicionar Animal");
+        System.out.println("\nBem vindo ao meu pet vacinas!! \n");  
+ 	System.out.println("1 - Adicionar Novo Usuario ");  
+        System.out.println("2 - Remover Usuario ");  
+        System.out.println("3 - Mostra todos os Usuarios Cadastrados "); 
+        System.out.println("4 - Adicionar Animal ");
+        System.out.println("5 - Mostra todos os Animais Cadastrados "); 
         //System.out.println("")
-        System.out.println("4 - Sair\n\n");   
+        System.out.println("6 - Sair\n\n");   
 
         
         
@@ -37,7 +44,7 @@ Scanner entrada = new Scanner(System.in);
                 Registro reg = new Registro();  
                   
                 reg.setId(i++);//a variável i vai ser utilizada aqui com o seu valor atual e logo após vai ser incrementado 1 no valor dela  
-                System.out.print("Digite o nome: ");  
+                System.out.print("Digite o seu nome: ");  
                 reg.setNome(entrada.nextLine());  
                 //System.out.println("\n\nVocê quer adicionar um novo animal agora? > \n1- Gato \n2- Cachorro");  
                 //System.out.print("Digite o tipo de Animal: ");  
@@ -50,7 +57,9 @@ Scanner entrada = new Scanner(System.in);
  // Problema no Delete: quando se tem uma biblioteca de objetos arraylist numerável, e vc vai deletando
  //os objetos, o ID deles permanece, sendo que o "remove" está trabalhando com o índice do arraylist,
  // não com "ID" do qual ele pede no print.
-            case 2:  System.out.println("Informe o ID do usuário a ser excluído:\n");
+            case 2:  
+               
+                System.out.println("Informe o ID do usuário a ser excluído:\n");
                 Scanner remover = new Scanner(System.in);
                  int j = remover.nextInt();
                          
@@ -75,18 +84,45 @@ Scanner entrada = new Scanner(System.in);
                     for (int m = 0; m < cadastro.size(); m++) {  
                         System.out.println("\nID Usuário: "+ cadastro.get(m).getId());  
                         System.out.println("Nome: " + cadastro.get(m).getNome());  
-                        System.out.println("Possui (1) Gato ou (2) Cachorro: "+ cadastro.get(m).getNConta());  
-                        System.out.println("Idade: "+ cadastro.get(m).getIdade());  
+                          
                     }  
                 }  
   
                 break;  
             case 4:
-              //  Animais.AdicionarAnimal();
-           /* case 4:  
+                Animais reganimal = new Animais();
+              reganimal.AdicionarAnimal();
+               reganimal.setId(k++);
+                cadastroanimal.add(reganimal); 
+                break;
+                
+            case 5:
+                if (cadastro.isEmpty()) {  
+                    System.out.println("\nNenhum Animal cadastrado\n");  
+                } else {  
+  
+                    for (int m = 0; m < cadastro.size(); m++) {  
+                        System.out.println("\nID Animal: "+ cadastroanimal.get(m).getId());  
+                        System.out.println("Nome: " + cadastroanimal.get(m).getNome());
+                        System.out.println("Idade (meses) : " + cadastroanimal.get(m).getIdade());
+                        if(cadastroanimal.get(m).getSexo() == 1)  
+                            System.out.println("Sexo: " + sexogambiarra);
+                        if(cadastroanimal.get(m).getSexo() == 2) 
+                            System.out.println("Sexo: " + sexogambiarra2);
+                        if(cadastroanimal.get(m).getRaca() == 1) 
+                            System.out.println("Esse Animal é um: " + racagambiarra);
+                        if(cadastroanimal.get(m).getRaca() == 2) 
+                            System.out.println("Esse Animal é um: " + racagambiarra2);
+                      
+                          
+                    }  
+                }  
+  
+                
+            case 6:  
                 System.exit(0);  
                 break;  
-                   */
+                  
             default:  
                 System.out.println("Opcao Incorreta");  
             }  
