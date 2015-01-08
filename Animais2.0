@@ -26,7 +26,7 @@ System.out.println("Qual o sexo do seu animal? 1- Macho, 2- Femea");
 int teste3 = entry.nextInt();
 super.setSexo(teste3);
 
-System.out.println("Seu animal é um gato ou cachorro? 1 - Gato, 2 - Cachorro");
+System.out.println("Seu animal é um gato ou cachorro? 1 - Cachorro, 2 - Gato");
 int teste4 = entry.nextInt();
 super.setRaca(teste4);
 
