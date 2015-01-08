@@ -1,0 +1,67 @@
+package projetofinal;
+
+
+abstract class SuperClasseAnimal {
+  
+    protected int id;
+    protected String nome;
+    protected int idade;
+// SEXO FOI TROCADO DE BOOLEAN PRA INT PORQUE ESTAVA DANDO PROBLEMA DE MISMATCH EXCEPTION NO SCANNER
+    protected int sexo;
+    protected String historicovacinal;
+    protected int raca; //cachorro ou gato
+    
+    protected void setId(int nId){  
+        this.id = nId;  
+}
+    protected void setNome(String nNome){  
+        this.nome = nNome;  
+     
+    }  
+    
+     protected void setIdade(int nIdade){  
+        this.idade = nIdade;  
+    }  
+     // SEXO FOI TROCADO DE BOOLEAN PRA INT PORQUE ESTAVA DANDO PROBLEMA DE MISMATCH EXCEPTION NO SCANNER
+     protected void setSexo(int nSexo){  
+        this.sexo = nSexo;  
+    }
+     protected void setHistoricovacinal(String nHistoricovacinal){
+             this.historicovacinal = nHistoricovacinal;
+     }
+     //exemplo de método get
+     /* public int getId(){  
+        return nroIdentificacao;  
+    } */
+     
+     protected int getId(){
+     return id;
+     }
+     
+     protected String getNome(){
+     return nome;
+     }
+     
+     protected int getIdade(){
+     return idade;
+     }
+     
+     protected int getSexo(){
+     return sexo;
+     }
+     
+     protected String getHistoricovacinal(){
+     return historicovacinal;
+     }
+     
+     protected void setRaca(int nRaca){  
+        this.raca = nRaca;
+     }
+     
+     protected int getRaca(){
+     return raca;
+     }
+     
+
+    
+}
