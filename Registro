@@ -1,0 +1,41 @@
+package projetofinal;
+public class Registro {  
+  
+    public int nroIdentificacao;  
+    public String nome;  
+    public static int tConta;  
+    public static double idade;  
+  
+    public void setId(int nId){  
+        this.nroIdentificacao = nId;  
+    }  
+  
+    public void setNome(String nNome){  
+        this.nome = nNome;  
+    }  
+  
+    public void setConta(int nConta){  
+        this.tConta = nConta;  
+    }  
+  
+    public void setIdade(double nSaldo){  
+        this.idade = nSaldo;  
+    }  
+  
+    public int getId(){  
+        return nroIdentificacao;  
+    }  
+  
+    public String getNome(){  
+        return nome;  
+    }  
+  
+    public int getNConta(){  
+        return tConta;  
+    }  
+  
+    public double getIdade(){  
+        return idade;  
+    }  
+  
+}  
