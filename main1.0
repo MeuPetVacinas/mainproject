@@ -1,0 +1,95 @@
+package projetofinal;
+
+import java.util.Scanner;  
+import java.util.ArrayList;  
+  
+public class Teste {  
+  
+
+  
+    public static void main(String[] args) {  
+        // TODO code application logic here  
+Scanner entrada = new Scanner(System.in);  
+  
+        int i = 0;   
+        int escolha = 0;  
+  
+        ArrayList<Registro> cadastro = new ArrayList<Registro>(); //mesmo motivo da variável i, para se utilizar sempre o mesmo ArrayList no resto código  
+        ArrayList<Animais> ArrayAnimal = new ArrayList<Animais>();
+        while (true) { //para o laço se repetir infinitamente (ou até que encontre o System.exit(0) na opção 4  
+  
+        System.out.println("Bem vindo ao meu pet vacinas!! \n");  
+ 	System.out.println("1 - Adicionar Novo Usuario");  
+        System.out.println("2 - Remover Usuario");  
+        System.out.println("3 - Mostra todos os Usuarios Cadastrados"); 
+        System.out.println("4 - Adicionar Animal");
+        //System.out.println("")
+        System.out.println("4 - Sair\n\n");   
+
+        
+        
+            System.out.print("Digite sua opcao: ");  
+            escolha = entrada.nextInt();  
+            entrada.nextLine(); // termina a leitura da linha acima  
+  
+            switch (escolha) {  
+            case 1:  
+                Registro reg = new Registro();  
+                  
+                reg.setId(i++);//a variável i vai ser utilizada aqui com o seu valor atual e logo após vai ser incrementado 1 no valor dela  
+                System.out.print("Digite o nome: ");  
+                reg.setNome(entrada.nextLine());  
+                //System.out.println("\n\nVocê quer adicionar um novo animal agora? > \n1- Gato \n2- Cachorro");  
+                //System.out.print("Digite o tipo de Animal: ");  
+                //reg.setConta(entrada.nextInt());  
+                //System.out.print("Digite a Idade: ");  
+                //reg.setIdade(entrada.nextDouble());  
+                cadastro.add(reg);                
+ 
+                break;
+ // Problema no Delete: quando se tem uma biblioteca de objetos arraylist numerável, e vc vai deletando
+ //os objetos, o ID deles permanece, sendo que o "remove" está trabalhando com o índice do arraylist,
+ // não com "ID" do qual ele pede no print.
+            case 2:  System.out.println("Informe o ID do usuário a ser excluído:\n");
+                Scanner remover = new Scanner(System.in);
+                 int j = remover.nextInt();
+                         
+                 try{
+                     cadastro.remove(j);
+                 }
+                 
+                 catch (IndexOutOfBoundsException e) {
+                        
+                        System.out.printf("\nErro: posicao invalida (%s).",
+                        e.getMessage());
+
+                 }
+                break;   
+        
+            case 3:  
+  
+                if (cadastro.isEmpty()) {  
+                    System.out.println("\nNenhum Usuário cadastrado\n");  
+                } else {  
+  
+                    for (int m = 0; m < cadastro.size(); m++) {  
+                        System.out.println("\nID Usuário: "+ cadastro.get(m).getId());  
+                        System.out.println("Nome: " + cadastro.get(m).getNome());  
+                        System.out.println("Possui (1) Gato ou (2) Cachorro: "+ cadastro.get(m).getNConta());  
+                        System.out.println("Idade: "+ cadastro.get(m).getIdade());  
+                    }  
+                }  
+  
+                break;  
+            case 4:
+              //  Animais.AdicionarAnimal();
+           /* case 4:  
+                System.exit(0);  
+                break;  
+                   */
+            default:  
+                System.out.println("Opcao Incorreta");  
+            }  
+        }  
+    }  
+}  
