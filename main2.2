@@ -20,24 +20,30 @@ Scanner entrada = new Scanner(System.in);
         String racagambiarra  = "Cachorro";
         String racagambiarra2  = "Gato";
   
-        ArrayList<Registro> cadastro = new ArrayList<Registro>(); //mesmo motivo da variável i, para se utilizar sempre o mesmo ArrayList no resto código  
-        ArrayList<Animais> cadastroanimal = new ArrayList<Animais>();
-        while (true) { //para o laço se repetir infinitamente (ou até que encontre o System.exit(0) na opção 4  
+        //ArrayList para interagir com os dados do usuário
+        ArrayList<Registro> cadastro = new ArrayList<Registro>(); 
+        
+        //ArrayList para interagir com os dados do animal
+        ArrayList<Animais> ArrayAnimal = new ArrayList<Animais>();
+        
+       //Laço de repetição que representa a exibição do menu até que encontre o System.exit(0) na opção 6
+        
+        while (true) { 
   
         System.out.println("\nBem vindo ao meu pet vacinas!! \n");  
- 	System.out.println("1 - Adicionar Novo Usuario ");  
+ 	
+ 	      System.out.println("1 - Adicionar Novo Usuario ");  
         System.out.println("2 - Remover Usuario ");  
         System.out.println("3 - Mostra todos os Usuarios Cadastrados "); 
         System.out.println("4 - Adicionar Animal ");
         System.out.println("5 - Mostra todos os Animais Cadastrados "); 
-        //System.out.println("")
-        System.out.println("6 - Sair\n\n");   
+        //System.out.println("6 - Visualizar histórico vacinal de um animal")
+        System.out.println("7 - Sair\n\n");   
 
-        
-        
-            System.out.print("Digite sua opcao: ");  
-            escolha = entrada.nextInt();  
-            entrada.nextLine(); // termina a leitura da linha acima  
+        System.out.print("Digite sua opcao: ");  
+        escolha = entrada.nextInt();  
+        entrada.nextLine(); // termina a leitura da linha acima  
+  
   
             switch (escolha) {  
             case 1:  
@@ -118,8 +124,42 @@ Scanner entrada = new Scanner(System.in);
                     }  
                 }  
   
+  
+            case 6:
+                     Scanner lerNome = new Scanner(System.in);
+                      Scanner decisao = new Scanner(System.in);
+              
+                      System.out.print("Digite o animal que você deseja visualizar histórico: ");  
+                      
+                      
+                      boolean nomePesquisado = ArrayAnimal.contains(10); 
+	  
+                        if (nomePesquisado == true) {
+                        
+                           System.out.println("Seu animal está cadastrado.");
+                           ArrayList vacinas = new ArrayList();  
+  
+                             while(!vacinas.isEmpty()){  
+                                      System.out.println(vacinas.remove(0));  
+                            }  
+                      }
+                  
+                      else {
+                         System.out.println("Seu animal não está cadastrado. Deseja cadastrar agora? (1) Sim ou (2) Não");
+                         int resposta = decisao.nextInt();
+                         
+                         if(resposta == 1) {
+                                      
+                   //CHAMA O CASE 1 DE ADD ANIMAL -> vai dar problema porque ele faz as mesmas perguntas de add usuário nesse case
+                         }
+                         
+                         else if(resposta == 2){
+                         
+                         //VOLTA PRO MENU PRINCIPAL
+                         }
+                      }
                 
-            case 6:  
+            case 7:  
                 System.exit(0);  
                 break;  
                   
