@@ -2,7 +2,7 @@ package projetofinal;
 
 
 abstract class SuperClasseAnimal {
-  
+  //ADICIONAR HISTORICO VACINAL
     protected int id;
     protected String nome;
     protected int idade;
